@@ -1,5 +1,4 @@
 import turtle
-import winsound
 
 # إعدادات الشاشة
 wind = turtle.Screen()
@@ -15,23 +14,22 @@ def show_start_screen():
     start_screen.penup()
     start_screen.goto(0, 100)
     start_screen.write("Press 'P' to Play with Friend or 'C' to Play with Computer", align="center", font=("Courier", 18, "normal"))
-    
+
     wind.listen()
     wind.onkeypress(start_game_friend, "p")
     wind.onkeypress(start_game_computer, "c")
 
 # دالة لبدء اللعب مع صديق
 def start_game_friend():
-    start_screen.clear()
     play_game(False)
 
 # دالة لبدء اللعب مع الكمبيوتر
 def start_game_computer():
-    start_screen.clear()
     play_game(True)
 
 # دالة للعبة
 def play_game(is_computer):
+    start_screen.clear()  # إزالة شاشة البداية
     # إعداد اللعبة
     madrab1 = turtle.Turtle()
     madrab1.speed(1)
@@ -108,11 +106,9 @@ def play_game(is_computer):
         if ball.ycor() > 290:
             ball.sety(290)
             ball.dy *= -1
-            winsound.Beep(1000, 200)
         if ball.ycor() < -290:
             ball.sety(-290)
             ball.dy *= -1
-            winsound.Beep(1000, 200)
 
         if ball.xcor() > 390:
             ball.goto(0, 0)
@@ -129,12 +125,10 @@ def play_game(is_computer):
         if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < madrab2.ycor() + 40 and ball.ycor() > madrab2.ycor() - 40):
             ball.setx(340)
             ball.dx *= -1
-            winsound.Beep(1000, 200)
 
         if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < madrab1.ycor() + 40 and ball.ycor() > madrab1.ycor() - 40):
             ball.setx(-340)
             ball.dx *= -1
-            winsound.Beep(1000, 200)
 
         madrab2_computer()
         wind.ontimer(game_loop, 10)
