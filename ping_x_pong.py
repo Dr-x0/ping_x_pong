@@ -21,18 +21,17 @@ def show_start_screen():
 
 # دالة لبدء اللعب مع صديق
 def start_game_friend():
-    show_start_screen()
     play_game(False)
 
 # دالة لبدء اللعب مع الكمبيوتر
 def start_game_computer():
-    show_start_screen()
     play_game(True)
 
 # دالة للعبة
 def play_game(is_computer):
     # إزالة شاشة البداية في حالة اللعبة
-    wind.clear()
+    for t in wind.turtles():
+        t.clear()
 
     # إعداد اللعبة
     madrab1 = turtle.Turtle()
