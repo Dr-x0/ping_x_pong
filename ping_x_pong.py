@@ -21,10 +21,12 @@ def show_start_screen():
 
 # دالة لبدء اللعب مع صديق
 def start_game_friend():
+    show_start_screen()  # إظهار شاشة البداية مرة أخرى عند الانتهاء من اللعبة
     play_game(False)
 
 # دالة لبدء اللعب مع الكمبيوتر
 def start_game_computer():
+    show_start_screen()  # إظهار شاشة البداية مرة أخرى عند الانتهاء من اللعبة
     play_game(True)
 
 # دالة للعبة
