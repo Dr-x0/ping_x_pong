@@ -6,7 +6,7 @@ wind.title("Ping X Pong")
 wind.bgcolor("black")
 wind.setup(width=800, height=600)
 
-# دالة لعرض شاشة البداية
+# إعداد شاشة البداية
 def show_start_screen():
     start_screen = turtle.Turtle()
     start_screen.hideturtle()
@@ -14,19 +14,20 @@ def show_start_screen():
     start_screen.penup()
     start_screen.goto(0, 100)
     start_screen.write("Press 'P' to Play with Friend or 'C' to Play with Computer", align="center", font=("Courier", 18, "normal"))
-
+    
+    # إضافة الاستماع للأزرار
     wind.listen()
     wind.onkeypress(start_game_friend, "p")
     wind.onkeypress(start_game_computer, "c")
 
 # دالة لبدء اللعب مع صديق
 def start_game_friend():
-    show_start_screen()
+    show_start_screen()  # إظهار شاشة البداية في اللعبة مع الصديق
     play_game(False)
 
 # دالة لبدء اللعب مع الكمبيوتر
 def start_game_computer():
-    show_start_screen()
+    show_start_screen()  # إظهار شاشة البداية في اللعبة مع الكمبيوتر
     play_game(True)
 
 # دالة للعبة
