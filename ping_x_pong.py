@@ -16,17 +16,17 @@ def show_start_screen():
     start_screen.write("Press 'P' to Play with Friend or 'C' to Play with Computer", align="center", font=("Courier", 18, "normal"))
 
     wind.listen()
-    wind.onkeypress(lambda: start_game_friend(start_screen), "p")
-    wind.onkeypress(lambda: start_game_computer(start_screen), "c")
+    wind.onkeypress(start_game_friend, "p")
+    wind.onkeypress(start_game_computer, "c")
 
 # دالة لبدء اللعب مع صديق
-def start_game_friend(start_screen):
-    start_screen.clear()
+def start_game_friend():
+    show_start_screen()
     play_game(False)
 
 # دالة لبدء اللعب مع الكمبيوتر
-def start_game_computer(start_screen):
-    start_screen.clear()
+def start_game_computer():
+    show_start_screen()
     play_game(True)
 
 # دالة للعبة
